@@ -11,32 +11,21 @@ def counting_sort(l, d):
     letters = [chr(i) for i in range(97, 122)]
     keywords = [''.join(i) for i in product(ascii_lowercase, repeat=3)]
     items = dict()
-    for letter in letters:
-        items[letter] = 0
+    for keyword in keywords:
+        items[keyword] = 0
     for item in l:
-        d_item = item[2:]
-        items[d_item] += 1
+        items[item] += 1
     sort_l = list()
     for letter in letters:
-        sort_l.extend(letter * items[letter])
-    return sort_l
+        for keyword in l:
+            if letter == keyword[d]:
+                sort_l.extend(keyword * items[keyword])
+    sorted_list = [i+j+z for i, j, z in zip(sort_l[::3], sort_l[1::3], sort_l[2::3])]
+    return sorted_list
 
-
-def radix_string_sort(l, i):
-    if len(l) <= 1:
-        return l
-    done_bucket = []
-    buckets = [[] for x in range(27)]
-    for s in l:
-        if i >= len(s):
-            done_bucket.append(s)
-        else:
-            buckets[ord(s[i]) - ord('a')].append(s)
-    buckets = [radix_string_sort(b, i + 1) for b in buckets]
-    return done_bucket + [b for blist in buckets for b in blist]
 
 o = ['abc', 'dcb', 'abb']
-print(radix_string_sort(o, 1))
-
+p = counting_sort(b, 2)
+print(counting_sort(p, 1))
 
 
