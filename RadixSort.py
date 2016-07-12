@@ -28,13 +28,11 @@ def counting_sort(l, d):
 
 
 def radix_sort(l, d):
-    for i in range(d):
-        l = counting_sort(l, i)
+    for i in range(d+1):
+        l = counting_sort(l, d-i)
     return l
 
-o = ['ahk', 'ahz', 'aib']
-x = counting_sort(b, 2)
-y = counting_sort(x, 1)
-z = counting_sort(y, 0)
-print(z)
+
+w = radix_sort(b, 2)
+print(w)
 print(sorted(b))
