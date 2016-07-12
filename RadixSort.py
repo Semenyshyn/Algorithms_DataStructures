@@ -23,7 +23,6 @@ def radix_sort(l, d):
         l = counting_sort(l, d-i)
     return l
 
-
 w = radix_sort(b, 2)
 print(w)
 
