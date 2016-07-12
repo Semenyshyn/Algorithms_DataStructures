@@ -9,7 +9,6 @@ b = a.split()
 n = Counter(a)
 
 
-
 def counting_sort(l, d):
     letters = [chr(i) for i in range(97, 123)]
     keywords = [''.join(i) for i in product(ascii_lowercase, repeat=3)]
