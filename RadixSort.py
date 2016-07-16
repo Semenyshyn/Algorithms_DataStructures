@@ -6,6 +6,7 @@ a = urllib.request.urlopen("http://courses.prometheus.org.ua/c4x/KPI/Algorithms1
 a = a.decode("utf-8")
 b = a.split()
 n = Counter(a)
+print(n)
 
 
 def counting_sort(l, d):
