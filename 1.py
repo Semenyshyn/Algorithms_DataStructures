@@ -3,7 +3,6 @@ f = test.read()
 test.close()
 values = list(map(int, f.split()))
 values = values[:1000]
-a = [1,2,3,4,5,6,7,8,9,10,11,12,1]
 m = len(values)
 
 
