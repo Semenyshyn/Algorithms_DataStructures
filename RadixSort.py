@@ -1,7 +1,6 @@
 import urllib.request
 from collections import Counter
 
-
 a = urllib.request.urlopen("http://courses.prometheus.org.ua/c4x/KPI/Algorithms101/asset/anagrams.txt").read()
 a = a.decode("utf-8")
 b = a.split()
@@ -20,10 +19,10 @@ def counting_sort(l, d):
 
 
 def radix_sort(l, d):
-    for i in range(d+1):
-        l = counting_sort(l, d-i)
+    for i in range(d + 1):
+        l = counting_sort(l, d - i)
     return l
+
 
 w = radix_sort(b, 2)
 print(w)
-

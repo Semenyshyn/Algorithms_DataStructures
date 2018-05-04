@@ -7,7 +7,7 @@ m = len(values)
 
 
 def hashfunction(k, i):
-    return (k+i) % m
+    return (k + i) % m
 
 
 def HashInsert(T, k):
@@ -34,20 +34,21 @@ def HashFind(T, k):
 
 
 def Counter(values):
-    table = [None]*m
+    table = [None] * m
     for k in values:
         HashInsert(table, k)
     print(table)
     l = 0
-    for s in range(-1000,1001):
+    for s in range(-1000, 1001):
         for x in table:
             if x is not None:
                 y = s - x
                 if x != y:
                     if HashFind(table, y):
-                        print('{0} = {1} + {2}'.format(s,x,y))
+                        print('{0} = {1} + {2}'.format(s, x, y))
                         l += 1
                         break
     return l
+
 
 print(Counter(values))

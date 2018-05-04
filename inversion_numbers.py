@@ -1,7 +1,10 @@
 import urllib.request
-test = urllib.request.urlopen("http://courses.prometheus.org.ua/c4x/KPI/Algorithms101/asset/input_1000_5.txt", ).readlines()
 
-test2 = urllib.request.urlopen("http://courses.prometheus.org.ua/c4x/KPI/Algorithms101/asset/input_1000_100.txt").readlines()
+test = urllib.request.urlopen(
+    "http://courses.prometheus.org.ua/c4x/KPI/Algorithms101/asset/input_1000_5.txt", ).readlines()
+
+test2 = urllib.request.urlopen(
+    "http://courses.prometheus.org.ua/c4x/KPI/Algorithms101/asset/input_1000_100.txt").readlines()
 
 
 def two_user(us1, us2):
@@ -18,7 +21,7 @@ def two_user(us1, us2):
 
 def mergeSort(alist, bList):
     if len(alist) > 1:
-        mid = len(alist)//2
+        mid = len(alist) // 2
         lefthalf = alist[:mid]
         righthalf = alist[mid:]
         lhf_b = bList[:mid]
@@ -33,25 +36,26 @@ def mergeSort(alist, bList):
             if lefthalf[i] < righthalf[j]:
                 alist[k] = lefthalf[i]
                 bList[k] = lhf_b[i]
-                i = i+1
+                i = i + 1
             else:
                 alist[k] = righthalf[j]
                 bList[k] = rhf_b[j]
-                j = j+1
-            k = k+1
+                j = j + 1
+            k = k + 1
 
         while i < len(lefthalf):
             alist[k] = lefthalf[i]
             bList[k] = lhf_b[i]
-            i = i+1
-            k = k+1
+            i = i + 1
+            k = k + 1
 
         while j < len(righthalf):
             alist[k] = righthalf[j]
             bList[k] = rhf_b[j]
-            j = j+1
-            k = k+1
+            j = j + 1
+            k = k + 1
         return bList
+
 
 def count_inversion(list):
     c = 0
@@ -62,6 +66,8 @@ def count_inversion(list):
                 c += 1
         i += 1
     return c
+
+
 '''
 list = two_user(863, 29)
 print(list)

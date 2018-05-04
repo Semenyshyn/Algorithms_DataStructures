@@ -1,7 +1,6 @@
 import urllib.request
 import heapq
 
-
 a = urllib.request.urlopen("http://courses.prometheus.org.ua/c4x/KPI/Algorithms101/asset/input_16_10000.txt").read()
 a = a.decode("utf-8")
 b = list(map(int, a.split()))
@@ -10,7 +9,7 @@ b.remove(b[0])
 
 def _heappush_max(heap, item):
     heap.append(item)
-    heapq._siftdown_max(heap, 0, len(heap)-1)
+    heapq._siftdown_max(heap, 0, len(heap) - 1)
 
 
 def _heappop_max(heap):
